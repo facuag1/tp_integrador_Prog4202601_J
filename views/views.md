@@ -1,0 +1,1 @@
+Archivos HTML, la "Vista" del sistema
