@@ -1,0 +1,97 @@
+/* =========================================
+   VARIABLES GLOBALES 
+   ========================================= */
+:root {
+  /* Colores Principales */
+  --primary-green: #2e7d32; /* Verde institucional (Navbar, Encabezados) */
+  --secondary-green: #4caf50; /* Verde para botones y acciones positivas */
+  --hover-green: #1b5e20; /* Verde oscuro para estados hover */
+
+  /* Colores de Fondo y Texto */
+  --bg-light: #f4f7f6; /* Gris muy claro para el fondo de pantalla */
+  --white: #ffffff;
+  --text-main: #333333; /* Gris oscuro para lectura clara */
+  --text-muted: #666666; /* Gris para textos secundarios */
+
+  /* Estados y Alertas */
+  --error-red: #d32f2f;
+  --border-color: #e0e0e0;
+
+  /* Sombras y Bordes */
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --radius-lg: 12px;
+  --radius-md: 8px;
+}
+
+/* =========================================
+   RESET Y ESTILOS BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =========================================
+   COMPONENTES REUTILIZABLES (UI)
+   ========================================= */
+
+/* Botones Estándar */
+.btn-primary {
+  background-color: var(--secondary-green);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Inputs del Sistema */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  font-size: 14px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary-green);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Contenedores de Tarjetas (Cards) */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-color);
+}
