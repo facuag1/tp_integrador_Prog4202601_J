@@ -1,1 +1,0 @@
-Aquí van los Web Components o funciones UI (header, menu, searchBar, etc)
