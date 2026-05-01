@@ -1,1 +1,0 @@
-Funciones para hacer fetch() al backend

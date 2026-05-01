@@ -1,1 +1,0 @@
-// El archivo principal que importa los componentes y los monta en el DOM

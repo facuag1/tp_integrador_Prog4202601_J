@@ -1,0 +1,1 @@
+las paginas o vistas del sistema

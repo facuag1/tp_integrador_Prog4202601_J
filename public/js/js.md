@@ -1,1 +1,0 @@
-Lógica del frontend (JS Vanilla)
