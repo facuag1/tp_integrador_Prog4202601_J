@@ -1,6 +1,4 @@
-/* =========================================
-   VARIABLES GLOBALES 
-   ========================================= */
+/* VARIABLES GLOBALES  */
 :root {
   /* Colores Principales */
   --primary-green: #2e7d32; /* Verde institucional (Navbar, Encabezados) */
@@ -23,9 +21,7 @@
   --radius-md: 8px;
 }
 
-/* =========================================
-   RESET Y ESTILOS BASE
-   ========================================= */
+/* RESET Y ESTILOS BASE */
 * {
   margin: 0;
   padding: 0;
@@ -39,11 +35,42 @@ body {
   line-height: 1.6;
 }
 
+.main-layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 24px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 16px;
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  display: none;
+}
+
+.sidebar-overlay.is-active {
+  display: block;
+}
+
 /* =========================================
    COMPONENTES REUTILIZABLES (UI)
    ========================================= */
 
-/* Botones Estándar */
 .btn-primary {
   background-color: var(--secondary-green);
   color: var(--white);
@@ -68,7 +95,6 @@ body {
   transform: translateY(0);
 }
 
-/* Inputs del Sistema */
 .form-control {
   width: 100%;
   padding: 12px 15px;
@@ -87,7 +113,6 @@ body {
   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
-/* Contenedores de Tarjetas (Cards) */
 .card {
   background: var(--white);
   border-radius: var(--radius-lg);
