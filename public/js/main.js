@@ -5,6 +5,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector(".menu-toggle");
     const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
+    // Seleccionamos todos los enlaces de navegación 
+    const menuLinks = document.querySelectorAll('.nav-link');
+
+
+    // Lógica de navegación dinámica
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const viewPath = link.getAttribute('data-view');
+          
+            if (viewPath) {
+           
+                loadComponent("main-content", viewPath);
+
+                // Opcional: Si es mobile, cerramos el menú al elegir una opción
+                if (window.innerWidth < 1024 && sidebar.classList.contains('is-active')) {
+                    sidebar.classList.remove('is-active');
+                    if(overlay) overlay.classList.remove('is-active');
+                }
+
+                // Opcional: Cambiar la clase "active" para pintar el botón seleccionado
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });	
+    });
+
+
     if (menuBtn && sidebar) {
       menuBtn.addEventListener("click", () => {
         sidebar.classList.toggle("is-active");
@@ -46,4 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header-container", "public/js/components/header/header.html");
   loadComponent("sidebar-container", "public/js/components/menu/menu.html");
   loadComponent("main-content", "public/views/dashboard-page/dashboard.html");
+  
+  
 });
